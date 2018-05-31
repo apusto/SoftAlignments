@@ -115,7 +115,7 @@ def readNematus(filename, openNMT = 0):
             if wasNew:
                 if len(aliTXT) > 0:
                     c = StringIO(aliTXT)
-                    ali = np.loadtxt(c)
+                    ali = np.loadtxt(c)[:,1:]
                     ali = ali.transpose()
                     alis.append(ali)
                     aliTXT = ''
@@ -133,7 +133,7 @@ def readNematus(filename, openNMT = 0):
                 wasNew = True
         if len(aliTXT) > 0:
             c = StringIO(aliTXT)
-            ali = np.loadtxt(c)
+            ali = np.loadtxt(c)[:,1:]
             if openNMT == 0:
                 ali = ali.transpose()
             alis.append(ali)
